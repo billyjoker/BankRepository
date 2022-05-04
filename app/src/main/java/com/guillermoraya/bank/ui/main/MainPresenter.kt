@@ -22,6 +22,6 @@ class MainPresenter {
 
         return bankList.filterNot { it.date == INVALID_DATE_FORMAT }.sortedByDescending {
             formatter.format(parser.parse(it.date))
-        }.asReversed().distinctBy { it.id }.toList() // If there are transactions that have the same id, the most recent one should be displayed.
+        }.distinctBy { it.id }.toList() // If there are transactions that have the same id, the most recent one should be displayed.
     }
 }
